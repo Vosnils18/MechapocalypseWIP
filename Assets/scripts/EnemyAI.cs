@@ -70,14 +70,14 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if(rb.velocity.x >= 0.01f) {
+        if(force.x >= 0.9f) { //left
             enemyGFX.localScale = new Vector3(-5f, 5f, 0f);
-        } else if(rb.velocity.x <= -0.01f) {
+        } else if(force.x <= -0.9f) { //right
             enemyGFX.localScale = new Vector3(5f, 5f, 0f);
-        }else if(rb.velocity.y >= 0.01f) {
-            enemyGFX.localScale = new Vector3(5f, 5f, 0f);
-        } else if(rb.velocity.y <= -0.01f) {
+        } else if(force.y >= 0.9f) { //down
             enemyGFX.localScale = new Vector3(5f, -5f, 0f);
+        } else if(force.y <= -0.9f) { //up
+            enemyGFX.localScale = new Vector3(5f, 5f, 0f);
         }
     }
 }
