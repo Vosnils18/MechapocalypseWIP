@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef0ba77cf48a483cb6d040dba304cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbFirepoint: {fileID: 0}
+  firepoint: {fileID: 1522588131}
   moveSpeed: 8
   rb: {fileID: 770595139}
   cam: {fileID: 519420031}
