@@ -14,11 +14,11 @@ TagManager:
   - 
   - 
   - Background
-  - Obstacles
+  - items
   - Characters
   - Player
   - Player Bullets
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4047536423
+    locked: 0
+  - name: Enemies
+    uniqueID: 2610743269
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2169768837
     locked: 0

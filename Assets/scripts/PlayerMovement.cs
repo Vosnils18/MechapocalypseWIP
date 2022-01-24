@@ -9,8 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     Vector2 movement;
-    Vector2 mousePos;
-    Vector2 firepointPosition;
+    //Vector2 mousePos;
+    Vector2 mouseScreen;
+    //Vector2 firepointPosition;
 
     public SpriteRenderer spriteRenderer;
 
@@ -22,20 +23,21 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mouseScreen = cam.ScreenToViewportPoint(Input.mousePosition);
+        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
-        firepointPosition = new Vector2(firepoint.position.x, firepoint.position.y);
-        Vector2 lookDir = mousePos - firepointPosition;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
-        firepoint.rotation = Quaternion.Euler(0f, 0f, angle);
+        //firepointPosition = new Vector2(firepoint.position.x, firepoint.position.y);
+        //Vector2 lookDir = mousePos - firepointPosition;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
+        //firepoint.rotation = Quaternion.Euler(0f, 0f, angle);
 
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if (Input.mousePosition.x >= 0.5)
+        if (mouseScreen.x >= 0.5)
         {
             isFacingRight = true;
         } else

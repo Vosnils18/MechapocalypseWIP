@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
-    public Transform enemyGFX;
+    public SpriteRenderer enemyGFX;
 
     Path path;
     int currentWaypoint = 0;
@@ -70,14 +70,12 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if(force.x >= 0.9f) { //left
-            enemyGFX.localScale = new Vector3(-5f, 5f, 0f);
-        } else if(force.x <= -0.9f) { //right
-            enemyGFX.localScale = new Vector3(5f, 5f, 0f);
-        } else if(force.y >= 0.9f) { //down
-            enemyGFX.localScale = new Vector3(5f, -5f, 0f);
-        } else if(force.y <= -0.9f) { //up
-            enemyGFX.localScale = new Vector3(5f, 5f, 0f);
+        if(force.x >= 0.9f) //right
+        {
+            enemyGFX.flipX = false;
+        } else
+        {
+            enemyGFX.flipX = true;
         }
     }
 }
